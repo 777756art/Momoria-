@@ -931,6 +931,13 @@ p {
   align-items: flex-start;
 }
 
+@media (max-width: 768px) {
+  .studio-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
 .studio-preview {
   background: var(--ink);
   border-radius: var(--radius-lg);
@@ -948,6 +955,15 @@ p {
   /* Subtle wood grain texture via gradient */
   background-image: 
     linear-gradient(135deg, #1C1714 0%, #2E2723 50%, #1C1714 100%);
+}
+
+@media (max-width: 768px) {
+  .studio-preview {
+    position: relative;
+    top: 0;
+    min-height: auto;
+    padding: var(--space-8) var(--space-5);
+  }
 }
 
 .preview-frame-label {
