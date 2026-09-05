@@ -335,25 +335,69 @@ p {
 /* Mobile nav */
 @media (max-width: 900px) {
   .nav-links {
-    display: none;
-    position: absolute;
-    top: 64px;
-    left: 0; right: 0;
-    background: var(--paper);
-    border-bottom: 1px solid var(--ink-15);
-    flex-direction: column;
-    padding: var(--space-4) 0;
-    box-shadow: 0 12px 24px rgba(28, 23, 20, 0.08);
-  }
-  .nav-links.open {
     display: flex;
+    position: fixed;
+    top: 64px;
+    left: 0; right: 0; bottom: 0;
+    background: var(--ink);
+    flex-direction: column;
+    padding: var(--space-8) var(--gutter);
+    z-index: 800;
+    height: calc(100vh - 64px);
+    overflow-y: auto;
+    
+    /* Reveal animation */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s var(--ease-out);
   }
+  
+  .nav-links.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
   .nav-link {
-    padding: 12px var(--gutter);
-    font-size: 0.9rem;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: var(--ink-30);
     width: 100%;
+    padding: 12px 0;
+    line-height: 1.1;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    
+    /* Staggered item animation */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s var(--ease-out);
   }
+  
+  .nav-links.open .nav-link {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .nav-links.open .nav-link:nth-child(1) { transition-delay: 0.05s; }
+  .nav-links.open .nav-link:nth-child(2) { transition-delay: 0.1s; }
+  .nav-links.open .nav-link:nth-child(3) { transition-delay: 0.15s; }
+  .nav-links.open .nav-link:nth-child(4) { transition-delay: 0.2s; }
+  .nav-links.open .nav-link:nth-child(5) { transition-delay: 0.25s; }
+  .nav-links.open .nav-link:nth-child(6) { transition-delay: 0.3s; }
+  .nav-links.open .nav-link:nth-child(7) { transition-delay: 0.35s; }
+
   .nav-link::after { display: none; }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--paper);
+    font-weight: 400;
+    font-style: italic;
+    padding-left: 20px; /* Elegant indentation for active state */
+  }
+  
   .mobile-menu-btn { display: flex; }
   .nav-whatsapp { display: none; }
 }
