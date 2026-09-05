@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memoria — Handcrafted Gifts, Made to Hold a Memory</title>
+  <meta name="description" content="Personalized gifts handcrafted in our Bengaluru studio. Memory frames, keepsake boxes, star maps, and more — made by hand, given from the heart.">
+
+  <!-- Fonts loaded via CSS @import for simplicity -->
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ─── HEADER ─── -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo" data-route="home">
+        <span class="brand-name">Memoria</span>
+        <span class="brand-tagline">Handcrafted in Bengaluru</span>
+      </a>
+
+      <ul class="nav-links" id="navLinksContainer">
+        <li><a href="#home" class="nav-link active" data-route="home">Home</a></li>
+        <li><a href="#gifts" class="nav-link" data-route="gifts">Our Gifts</a></li>
+        <li><a href="#personalized" class="nav-link" data-route="personalized">Personalized</a></li>
+        <li><a href="#occasions" class="nav-link" data-route="occasions">Occasions</a></li>
+        <li><a href="#about" class="nav-link" data-route="about">About</a></li>
+        <li><a href="#gallery" class="nav-link" data-route="gallery">Gallery</a></li>
+        <li><a href="#corporate" class="nav-link" data-route="corporate">Corporate</a></li>
+        <li><a href="#contact" class="nav-link" data-route="contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-whatsapp nav-whatsapp" onclick="openWhatsAppEnquiry()" aria-label="Message us on WhatsApp">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Message Us
+        </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open navigation menu" aria-expanded="false">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ─── MAIN CONTENT ─── -->
+  <main>
+
+    <!-- ==================== HOME ==================== -->
+    <div id="page-home" class="page-view active">
+
+      <!-- HERO: Full-width editorial image -->
+      <section class="hero">
+        <div class="hero-bg">
+          <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1600&q=80"
+               alt="Beautifully wrapped handcrafted gift with gold ribbon"
+               fetchpriority="high">
+        </div>
+        <div class="container hero-content">
+          <h1 class="hero-stamp">Gifts made by hand.<br>Given from the heart.</h1>
+          <p class="hero-subtitle">
+            We craft personalized keepsakes in our Bengaluru studio — memory frames, star maps, keepsake boxes — each one made for the person and moment it represents.
+          </p>
+          <div class="hero-ctas">
+            <button class="btn btn-warm" onclick="navigateTo('gifts')">
+              View our gifts <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+            <button class="btn btn-ghost" onclick="navigateTo('personalized')">
+              Start customizing
+            </button>
+          </div>
+          <div class="hero-detail">
+            <div class="hero-detail-item">
+              <strong>4,000+</strong>
+              Gifts delivered
+            </div>
+            <div class="hero-detail-item">
+              <strong>Handcrafted</strong>
+              Every single piece
+            </div>
+            <div class="hero-detail-item">
+              <strong>Since 2017</strong>
+              Indiranagar studio
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GIFTS CAROUSEL: Horizontal scroll -->
+      <section class="section">
+        <div class="container">
+          <div class="gifts-intro">
+            <div>
+              <h2 class="section-title">Things we make</h2>
+              <p class="section-desc">Each piece is made to order. Browse, then tell us your story — we'll handle the rest.</p>
+            </div>
+            <button class="btn btn-outline" onclick="navigateTo('gifts')">
+              View all gifts <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="gifts-scroll-wrap">
+            <div class="gifts-scroll" id="featuredGiftsScroll" role="list" aria-label="Featured handcrafted gifts">
+              <!-- JS populates -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS: Alternating editorial panels -->
+      <section class="section section-on-paper">
+        <div class="container">
+          <div style="margin-bottom: var(--space-10);">
+            <h2 class="section-title">From your story to their hands</h2>
+            <p class="section-desc">Three conversations is all it takes. You share the story. We make it real.</p>
+          </div>
+
+          <div class="process-editorial">
+            <div class="process-panel">
+              <div class="process-image">
+                <img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?auto=format&fit=crop&w=800&q=80"
+                     alt="Two people having a conversation over coffee" loading="lazy">
+              </div>
+              <div class="process-text">
+                <span class="process-label">The conversation</span>
+                <h3>You tell us the story</h3>
+                <p>Send us a WhatsApp message. Tell us about the person, the occasion, and the memory you want to capture. We'll ask the right questions and suggest the perfect format.</p>
+              </div>
+            </div>
+
+            <div class="process-panel">
+              <div class="process-image">
+                <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=800&q=80"
+                     alt="Artisan hands carefully crafting a wooden frame" loading="lazy">
+              </div>
+              <div class="process-text">
+                <span class="process-label">The craft</span>
+                <h3>We bring it to life</h3>
+                <p>Our artisans work with sustainably sourced teak, recycled brass, and archival inks. Every engraving, every joint, every detail — done by hand in our Indiranagar studio.</p>
+              </div>
+            </div>
+
+            <div class="process-panel">
+              <div class="process-image">
+                <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80"
+                     alt="Gift wrapped in linen with gold ribbon, ready to give" loading="lazy">
+              </div>
+              <div class="process-text">
+                <span class="process-label">The moment</span>
+                <h3>You give something unforgettable</h3>
+                <p>Delivered in our signature linen wrapping — every piece arrives ready to give. Most of our customers tell us the unboxing itself becomes a memory.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIAL: Single large rotating quote -->
+      <section class="testimonial-section" aria-label="Customer testimonials">
+        <div class="container">
+          <div class="testimonial-inner">
+            <div class="testimonial-quote-mark" aria-hidden="true">"</div>
+            <p class="testimonial-text" id="testimonialText"></p>
+            <p class="testimonial-author" id="testimonialAuthor"></p>
+            <p class="testimonial-occasion" id="testimonialOccasion"></p>
+            <div class="testimonial-dots" id="testimonialDots" role="tablist" aria-label="Testimonial navigation"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-inner">
+            <h2>Have something in mind?</h2>
+            <div class="cta-actions">
+              <button class="btn btn-whatsapp" onclick="openWhatsAppEnquiry()">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Send us a message
+              </button>
+              <button class="btn btn-outline" onclick="navigateTo('personalized')">
+                Start customizing
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /page-home -->
+
+
+    <!-- ==================== GIFTS CATALOGUE ==================== -->
+    <div id="page-gifts" class="page-view">
+      <section class="section">
+        <div class="container">
+          <div class="catalogue-header">
+            <h1 class="section-title">Our gift collection</h1>
+            <p class="section-desc">Every piece is made to order. Prices on enquiry — message us to discuss your gift.</p>
+            <div class="filter-tabs" role="tablist" aria-label="Filter gifts by category">
+              <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">All</button>
+              <button class="filter-tab" data-filter="personalized" role="tab" aria-selected="false">Personalized</button>
+              <button class="filter-tab" data-filter="couples" role="tab" aria-selected="false">Couples</button>
+              <button class="filter-tab" data-filter="birthday" role="tab" aria-selected="false">Birthday</button>
+              <button class="filter-tab" data-filter="anniversary" role="tab" aria-selected="false">Anniversary</button>
+              <button class="filter-tab" data-filter="wedding" role="tab" aria-selected="false">Wedding</button>
+              <button class="filter-tab" data-filter="handmade" role="tab" aria-selected="false">Handmade</button>
+              <button class="filter-tab" data-filter="corporate" role="tab" aria-selected="false">Corporate</button>
+            </div>
+          </div>
+          <div class="gifts-grid" id="catalogGrid" role="list" aria-live="polite"></div>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ==================== PERSONALIZED (STUDIO) ==================== -->
+    <div id="page-personalized" class="page-view">
+      <section class="section">
+        <div class="container">
+          <div style="margin-bottom: var(--space-8);">
+            <h1 class="section-title">Design your gift</h1>
+            <p class="section-desc">Customize your keepsake here. See a live preview as you build it, then send your design to us via WhatsApp.</p>
+          </div>
+
+          <div class="studio-grid">
+            <!-- Live Preview -->
+            <div class="studio-preview" role="region" aria-label="Live gift preview" aria-live="polite">
+              <p class="preview-frame-label" id="previewFrameLabel">Teak Wood Frame</p>
+              <div class="preview-names" id="previewNames">Arjun & Priya</div>
+              <div class="preview-date" id="previewDate">14 · 02 · 2019</div>
+              <div class="preview-quote" id="previewQuote">"Every love story is beautiful, but ours is my favourite."</div>
+              <div class="preview-frame-style" id="previewStyle">Selected finish: Natural Teak</div>
+            </div>
+
+            <!-- Controls -->
+            <div class="studio-controls">
+              <div class="form-group">
+                <label class="form-label" for="studioName1">Name / Person 1</label>
+                <input type="text" id="studioName1" class="form-input" placeholder="e.g. Arjun" maxlength="30" oninput="updatePreview()">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="studioName2">Name / Person 2 (optional)</label>
+                <input type="text" id="studioName2" class="form-input" placeholder="e.g. Priya" maxlength="30" oninput="updatePreview()">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="studioDate">Special Date</label>
+                <input type="text" id="studioDate" class="form-input" placeholder="e.g. 14 · 02 · 2019" maxlength="20" oninput="updatePreview()">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="studioQuote">Personal Quote or Message</label>
+                <input type="text" id="studioQuote" class="form-input" placeholder="e.g. You are my person." maxlength="80" oninput="updatePreview()">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Frame Finish</label>
+                <div class="frame-style-grid" role="radiogroup" aria-label="Frame finish options">
+                  <button class="frame-style-btn active" data-style="Natural Teak" onclick="selectFrameStyle(this)" role="radio" aria-checked="true">Natural Teak</button>
+                  <button class="frame-style-btn" data-style="Ebony Dark" onclick="selectFrameStyle(this)" role="radio" aria-checked="false">Ebony Dark</button>
+                  <button class="frame-style-btn" data-style="Gold Brass" onclick="selectFrameStyle(this)" role="radio" aria-checked="false">Gold Brass</button>
+                  <button class="frame-style-btn" data-style="Ivory White" onclick="selectFrameStyle(this)" role="radio" aria-checked="false">Ivory White</button>
+                </div>
+              </div>
+              <button class="btn btn-whatsapp" style="width:100%; justify-content:center;" onclick="sendStudioToWhatsApp()">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Send my design to WhatsApp
+              </button>
+              <p style="font-size: 0.75rem; color: var(--ink-50); text-align: center;">We'll review your design and confirm pricing within 2 hours.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ==================== OCCASIONS ==================== -->
+    <div id="page-occasions" class="page-view">
+      <section class="section">
+        <div class="container">
+          <h1 class="section-title">A gift for every story</h1>
+          <p class="section-desc" style="margin-bottom: var(--space-8);">Whatever the occasion, we have something personal and beautifully made — just for them.</p>
+          <div class="occasions-grid" id="fullOccasionsGrid" role="list" aria-label="All gift occasions"></div>
+        </div>
+      </section>
+      <section class="section section-on-paper">
+        <div class="container">
+          <h2 class="section-title" style="margin-bottom: var(--space-6);">Popular gifts by occasion</h2>
+          <div class="gifts-grid" id="occasionGiftsGrid" aria-live="polite"></div>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ==================== ABOUT ==================== -->
+    <div id="page-about" class="page-view">
+      <section class="section">
+        <div class="container">
+          <div class="about-editorial">
+            <img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?auto=format&fit=crop&w=800&q=80"
+                 alt="Artisan crafting a personalized gift in Memoria's Indiranagar studio" loading="lazy">
+            <div class="about-text">
+              <h1>Crafted with love,<br>made to last</h1>
+              <p>Memoria was born from a simple belief: the best gifts aren't things — they're memories. Founded in 2017 in a small Indiranagar studio, we started with a single laser engraver, a lot of heart, and the dream of making personalized gifting accessible for every occasion.</p>
+              <p>Today, we're a team of 12 passionate artisans crafting thousands of bespoke gifts every year — from memory frames to constellation maps — all by hand, all with care.</p>
+              <button class="btn btn-primary" onclick="navigateTo('contact')">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i> Get in touch
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-on-paper">
+        <div class="container">
+          <h2 class="section-title" style="margin-bottom: var(--space-4);">What we stand for</h2>
+          <div class="values-grid">
+            <div class="value-card">
+              <i class="fa-solid fa-hand-sparkles" aria-hidden="true"></i>
+              <h3>Handcrafted, always</h3>
+              <p>Every item is made by hand by our skilled artisans — no mass production, ever.</p>
+            </div>
+            <div class="value-card">
+              <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+              <h3>Sustainable materials</h3>
+              <p>We use sustainably sourced teak, recycled brass, and eco-friendly archival inks.</p>
+            </div>
+            <div class="value-card">
+              <i class="fa-solid fa-comments" aria-hidden="true"></i>
+              <h3>Personal consultation</h3>
+              <p>We work closely with you via WhatsApp to ensure every detail is exactly right.</p>
+            </div>
+            <div class="value-card">
+              <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
+              <h3>Quality guaranteed</h3>
+              <p>Not satisfied? We'll make it right — no questions asked.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ==================== GALLERY ==================== -->
+    <div id="page-gallery" class="page-view">
+      <section class="section">
+        <div class="container">
+          <h1 class="section-title">Real gifts, real moments</h1>
+          <p class="section-desc" style="margin-bottom: var(--space-5);">A selection of pieces we've made for our customers.</p>
+          <div class="filter-tabs" role="tablist" aria-label="Gallery category filters" style="margin-bottom: var(--space-6);">
+            <button class="filter-tab active" data-gallery-filter="all" role="tab" aria-selected="true">All</button>
+            <button class="filter-tab" data-gallery-filter="frames" role="tab" aria-selected="false">Frames</button>
+            <button class="filter-tab" data-gallery-filter="boxes" role="tab" aria-selected="false">Keepsake Boxes</button>
+            <button class="filter-tab" data-gallery-filter="maps" role="tab" aria-selected="false">Maps & Art</button>
+            <button class="filter-tab" data-gallery-filter="sets" role="tab" aria-selected="false">Gift Sets</button>
+          </div>
+          <div class="gallery-grid" id="galleryGrid" role="list" aria-label="Gallery of gift photos"></div>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ==================== CORPORATE ==================== -->
+    <div id="page-corporate" class="page-view">
+      <section class="section">
+        <div class="container">
+          <h1 class="section-title">Corporate gifts that leave a mark</h1>
+          <p class="section-desc">Branded, bulk, or bespoke — we partner with businesses to create memorable gifts that reflect your brand values.</p>
+
+          <div class="corporate-benefits">
+            <div class="benefit-card">
+              <div class="benefit-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div>
+              <h3>Bulk orders</h3>
+              <p>Minimum order of 25 pieces with competitive bulk pricing. Perfect for teams, events, and client appreciation.</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon"><i class="fa-solid fa-tag" aria-hidden="true"></i></div>
+              <h3>Custom branding</h3>
+              <p>Add your company logo, tagline, or messaging — laser-engraved directly into premium materials.</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon"><i class="fa-solid fa-truck" aria-hidden="true"></i></div>
+              <h3>Pan-India delivery</h3>
+              <p>We handle packaging and delivery across India. Each gift arrives beautifully wrapped and ready to give.</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></div>
+              <h3>Dedicated manager</h3>
+              <p>Get a dedicated account manager who handles your entire order from design to delivery.</p>
+            </div>
+          </div>
+
+          <div class="corporate-cta-box">
+            <h2>Get a corporate quote</h2>
+            <p>Share your brief with us and we'll get back with a detailed quote within 24 hours.</p>
+            <div class="cta-actions">
+              <button class="btn btn-whatsapp" onclick="openWhatsApp('Hi Memoria! I am interested in corporate gifting. Could you share your catalogue and pricing?')">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp your brief
+              </button>
+              <button class="btn btn-ghost" onclick="navigateTo('contact')">
+                Send enquiry form
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ==================== CONTACT ==================== -->
+    <div id="page-contact" class="page-view">
+      <section class="section">
+        <div class="container">
+          <div style="margin-bottom: var(--space-8);">
+            <h1 class="section-title">Let's create something together</h1>
+            <p class="section-desc">Whether you have a question, a gift idea, or a bulk order — we'd love to hear from you.</p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-info">
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></div>
+                <div class="contact-info-text">
+                  <strong>WhatsApp (fastest)</strong>
+                  <p>+91 98765 43210 — reply within 2 hours</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+                <div class="contact-info-text">
+                  <strong>Email</strong>
+                  <a href="mailto:hello@memoria.in">hello@memoria.in</a>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+                <div class="contact-info-text">
+                  <strong>Studio address</strong>
+                  <p>14/2, 8th Cross, Indiranagar,<br>Bengaluru, Karnataka — 560038</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></div>
+                <div class="contact-info-text">
+                  <strong>Studio hours</strong>
+                  <p>Mon–Sat: 10 AM – 7 PM<br>Sunday: 11 AM – 5 PM</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-form-card">
+              <h2>Send an enquiry</h2>
+              <form id="contactEnquiryForm" onsubmit="handleContactForm(event)" novalidate>
+                <div class="form-row" style="margin-bottom: var(--space-4);">
+                  <div class="form-group">
+                    <label class="form-label" for="cf-name">Full Name <span aria-hidden="true">*</span></label>
+                    <input type="text" id="cf-name" class="form-input" name="name" placeholder="Your full name" required autocomplete="name">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="cf-phone">Phone / WhatsApp <span aria-hidden="true">*</span></label>
+                    <input type="tel" id="cf-phone" class="form-input" name="phone" placeholder="+91 98765 43210" required autocomplete="tel">
+                  </div>
+                </div>
+                <div class="form-group" style="margin-bottom: var(--space-4);">
+                  <label class="form-label" for="cf-occasion">Occasion</label>
+                  <select id="cf-occasion" class="form-select" name="occasion">
+                    <option value="">Select an occasion</option>
+                    <option>Anniversary</option>
+                    <option>Wedding</option>
+                    <option>Birthday</option>
+                    <option>Couples Gift</option>
+                    <option>Baby &amp; Newborn</option>
+                    <option>Friendship</option>
+                    <option>Corporate</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form-group" style="margin-bottom: var(--space-4);">
+                  <label class="form-label" for="cf-gift">Gift requirement</label>
+                  <input type="text" id="cf-gift" class="form-input" name="gift" placeholder="e.g. Personalized memory frame with photo">
+                </div>
+                <div class="form-group" style="margin-bottom: var(--space-5);">
+                  <label class="form-label" for="cf-message">Message <span aria-hidden="true">*</span></label>
+                  <textarea id="cf-message" class="form-input form-textarea" name="message" placeholder="Tell us your story — names, dates, what makes this gift special…" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                  <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send enquiry
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Memoria</h3>
+          <p>Handcrafted keepsakes and personalized gifts — made with love in our Bengaluru studio since 2017.</p>
+          <div class="footer-social-links" aria-label="Social media links">
+            <a href="#" class="footer-social-link" target="_blank" rel="noopener" aria-label="Memoria on Instagram">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="footer-social-link" target="_blank" rel="noopener" aria-label="Memoria on Pinterest">
+              <i class="fa-brands fa-pinterest" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="footer-social-link" target="_blank" rel="noopener" aria-label="Memoria on Facebook">
+              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://wa.me/919876543210" class="footer-social-link" target="_blank" rel="noopener" aria-label="Memoria on WhatsApp">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><button onclick="navigateTo('home')">Home</button></li>
+            <li><button onclick="navigateTo('gifts')">Our Gifts</button></li>
+            <li><button onclick="navigateTo('personalized')">Personalize</button></li>
+            <li><button onclick="navigateTo('occasions')">Occasions</button></li>
+            <li><button onclick="navigateTo('gallery')">Gallery</button></li>
+            <li><button onclick="navigateTo('about')">About Us</button></li>
+            <li><button onclick="navigateTo('corporate')">Corporate</button></li>
+            <li><button onclick="navigateTo('contact')">Contact</button></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Gift Occasions</h4>
+          <ul>
+            <li><button onclick="navigateTo('occasions')">Anniversary</button></li>
+            <li><button onclick="navigateTo('occasions')">Wedding</button></li>
+            <li><button onclick="navigateTo('occasions')">Birthday</button></li>
+            <li><button onclick="navigateTo('occasions')">Love & Couples</button></li>
+            <li><button onclick="navigateTo('occasions')">Baby & Newborn</button></li>
+            <li><button onclick="navigateTo('occasions')">Friendship</button></li>
+            <li><button onclick="navigateTo('corporate')">Corporate Gifting</button></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Stay Connected</h4>
+          <p style="font-size: 0.82rem; color: rgba(254,250,245,0.35); margin-bottom: var(--space-3); line-height: 1.6;">Gift inspiration, new launches, and exclusive offers.</p>
+          <form class="footer-newsletter" onsubmit="handleNewsletterSignup(event)" novalidate>
+            <label for="footer-newsletter-email" class="sr-only">Email address for newsletter</label>
+            <input type="email" id="footer-newsletter-email" placeholder="your@email.com" required autocomplete="email">
+            <button type="submit" aria-label="Subscribe to newsletter">Subscribe</button>
+          </form>
+          <div style="margin-top: var(--space-5);">
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="https://wa.me/919876543210" target="_blank" rel="noopener">+91 98765 43210</a></li>
+              <li><a href="mailto:hello@memoria.in">hello@memoria.in</a></li>
+              <li><button onclick="navigateTo('contact')">Indiranagar, Bengaluru</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Memoria. All rights reserved. Handcrafted in Bengaluru 🇮🇳</p>
+        <nav class="footer-bottom-links" aria-label="Legal links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ─── MOBILE STICKY BAR ─── -->
+  <div class="mobile-sticky-bar" role="complementary" aria-label="Quick actions">
+    <button class="btn btn-outline" onclick="navigateTo('gifts')" aria-label="Browse our gift catalogue">
+      <i class="fa-solid fa-gift" aria-hidden="true"></i> Browse Gifts
+    </button>
+    <button class="btn btn-whatsapp" onclick="openWhatsAppEnquiry()" aria-label="WhatsApp us">
+      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Message Us
+    </button>
+  </div>
+
+  <!-- ─── WHATSAPP FAB ─── -->
+  <div class="whatsapp-fab" aria-label="WhatsApp quick contact">
+    <button class="whatsapp-fab-btn" onclick="openWhatsAppEnquiry()" aria-label="Open WhatsApp chat with Memoria">
+      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <!-- ─── GIFT MODAL ─── -->
+  <div class="modal-overlay" id="giftModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalGiftTitle">
+    <div class="modal-box" id="giftModalBox">
+      <button class="modal-close" id="giftModalClose" aria-label="Close gift details">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <img id="modalGiftImg" class="modal-img" src="" alt="">
+      <div class="modal-body" id="modalGiftBody"></div>
+    </div>
+  </div>
+
+  <!-- ─── LIGHTBOX ─── -->
+  <div class="lightbox-overlay" id="lightboxOverlay" role="dialog" aria-modal="true" aria-label="Gallery image viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close gallery image">
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+    </button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  </div>
+
+  <!-- ─── TOAST ─── -->
+  <div class="toast" id="toastNotification" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ─── SCRIPTS ─── -->
+  <script src="js/gifts-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
