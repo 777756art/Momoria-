@@ -95,13 +95,19 @@ handleScroll();
 /* ─── Mobile menu ───────────────────────────────────────────────────── */
 function closeMobileMenu() {
   if (navLinksContainer) navLinksContainer.classList.remove('open');
-  if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'false');
+  if (siteHeader) siteHeader.classList.remove('menu-open');
+  if (mobileMenuBtn) {
+    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+  }
 }
 
 if (mobileMenuBtn) {
   mobileMenuBtn.addEventListener('click', () => {
     const isOpen = navLinksContainer.classList.toggle('open');
+    siteHeader.classList.toggle('menu-open', isOpen);
     mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+    mobileMenuBtn.innerHTML = isOpen ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>' : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
   });
 }
 
