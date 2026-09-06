@@ -27,11 +27,8 @@
       <ul class="nav-links" id="navLinksContainer">
         <li><a href="#home" class="nav-link active" data-route="home">Home</a></li>
         <li><a href="#gifts" class="nav-link" data-route="gifts">Our Gifts</a></li>
-        <li><a href="#personalized" class="nav-link" data-route="personalized">Personalized</a></li>
         <li><a href="#occasions" class="nav-link" data-route="occasions">Occasions</a></li>
         <li><a href="#about" class="nav-link" data-route="about">About</a></li>
-        <li><a href="#gallery" class="nav-link" data-route="gallery">Gallery</a></li>
-        <li><a href="#corporate" class="nav-link" data-route="corporate">Corporate</a></li>
         <li><a href="#contact" class="nav-link" data-route="contact">Contact</a></li>
       </ul>
 
@@ -215,63 +212,6 @@
     </div>
 
 
-    <!-- ==================== PERSONALIZED (STUDIO) ==================== -->
-    <div id="page-personalized" class="page-view">
-      <section class="section">
-        <div class="container">
-          <div style="margin-bottom: var(--space-8);">
-            <h1 class="section-title">Design your gift</h1>
-            <p class="section-desc">Customize your keepsake here. See a live preview as you build it, then send your design to us via WhatsApp.</p>
-          </div>
-
-          <div class="studio-grid">
-            <!-- Live Preview -->
-            <div class="studio-preview" role="region" aria-label="Live gift preview" aria-live="polite">
-              <p class="preview-frame-label" id="previewFrameLabel">Teak Wood Frame</p>
-              <div class="preview-names" id="previewNames">Arjun & Priya</div>
-              <div class="preview-date" id="previewDate">14 · 02 · 2019</div>
-              <div class="preview-quote" id="previewQuote">"Every love story is beautiful, but ours is my favourite."</div>
-              <div class="preview-frame-style" id="previewStyle">Selected finish: Natural Teak</div>
-            </div>
-
-            <!-- Controls -->
-            <div class="studio-controls">
-              <div class="form-group">
-                <label class="form-label" for="studioName1">Name / Person 1</label>
-                <input type="text" id="studioName1" class="form-input" placeholder="e.g. Arjun" maxlength="30" oninput="updatePreview()">
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="studioName2">Name / Person 2 (optional)</label>
-                <input type="text" id="studioName2" class="form-input" placeholder="e.g. Priya" maxlength="30" oninput="updatePreview()">
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="studioDate">Special Date</label>
-                <input type="text" id="studioDate" class="form-input" placeholder="e.g. 14 · 02 · 2019" maxlength="20" oninput="updatePreview()">
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="studioQuote">Personal Quote or Message</label>
-                <input type="text" id="studioQuote" class="form-input" placeholder="e.g. You are my person." maxlength="80" oninput="updatePreview()">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Frame Finish</label>
-                <div class="frame-style-grid" role="radiogroup" aria-label="Frame finish options">
-                  <button class="frame-style-btn active" data-style="Natural Teak" onclick="selectFrameStyle(this)" role="radio" aria-checked="true">Natural Teak</button>
-                  <button class="frame-style-btn" data-style="Ebony Dark" onclick="selectFrameStyle(this)" role="radio" aria-checked="false">Ebony Dark</button>
-                  <button class="frame-style-btn" data-style="Gold Brass" onclick="selectFrameStyle(this)" role="radio" aria-checked="false">Gold Brass</button>
-                  <button class="frame-style-btn" data-style="Ivory White" onclick="selectFrameStyle(this)" role="radio" aria-checked="false">Ivory White</button>
-                </div>
-              </div>
-              <button class="btn btn-whatsapp" style="width:100%; justify-content:center;" onclick="sendStudioToWhatsApp()">
-                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Send my design to WhatsApp
-              </button>
-              <p style="font-size: 0.75rem; color: var(--ink-50); text-align: center;">We'll review your design and confirm pricing within 2 hours.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-
     <!-- ==================== OCCASIONS ==================== -->
     <div id="page-occasions" class="page-view">
       <section class="section">
@@ -332,72 +272,6 @@
               <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
               <h3>Quality guaranteed</h3>
               <p>Not satisfied? We'll make it right — no questions asked.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-
-    <!-- ==================== GALLERY ==================== -->
-    <div id="page-gallery" class="page-view">
-      <section class="section">
-        <div class="container">
-          <h1 class="section-title">Real gifts, real moments</h1>
-          <p class="section-desc" style="margin-bottom: var(--space-5);">A selection of pieces we've made for our customers.</p>
-          <div class="filter-tabs" role="tablist" aria-label="Gallery category filters" style="margin-bottom: var(--space-6);">
-            <button class="filter-tab active" data-gallery-filter="all" role="tab" aria-selected="true">All</button>
-            <button class="filter-tab" data-gallery-filter="frames" role="tab" aria-selected="false">Frames</button>
-            <button class="filter-tab" data-gallery-filter="boxes" role="tab" aria-selected="false">Keepsake Boxes</button>
-            <button class="filter-tab" data-gallery-filter="maps" role="tab" aria-selected="false">Maps & Art</button>
-            <button class="filter-tab" data-gallery-filter="sets" role="tab" aria-selected="false">Gift Sets</button>
-          </div>
-          <div class="gallery-grid" id="galleryGrid" role="list" aria-label="Gallery of gift photos"></div>
-        </div>
-      </section>
-    </div>
-
-
-    <!-- ==================== CORPORATE ==================== -->
-    <div id="page-corporate" class="page-view">
-      <section class="section">
-        <div class="container">
-          <h1 class="section-title">Corporate gifts that leave a mark</h1>
-          <p class="section-desc">Branded, bulk, or bespoke — we partner with businesses to create memorable gifts that reflect your brand values.</p>
-
-          <div class="corporate-benefits">
-            <div class="benefit-card">
-              <div class="benefit-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div>
-              <h3>Bulk orders</h3>
-              <p>Minimum order of 25 pieces with competitive bulk pricing. Perfect for teams, events, and client appreciation.</p>
-            </div>
-            <div class="benefit-card">
-              <div class="benefit-icon"><i class="fa-solid fa-tag" aria-hidden="true"></i></div>
-              <h3>Custom branding</h3>
-              <p>Add your company logo, tagline, or messaging — laser-engraved directly into premium materials.</p>
-            </div>
-            <div class="benefit-card">
-              <div class="benefit-icon"><i class="fa-solid fa-truck" aria-hidden="true"></i></div>
-              <h3>Pan-India delivery</h3>
-              <p>We handle packaging and delivery across India. Each gift arrives beautifully wrapped and ready to give.</p>
-            </div>
-            <div class="benefit-card">
-              <div class="benefit-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></div>
-              <h3>Dedicated manager</h3>
-              <p>Get a dedicated account manager who handles your entire order from design to delivery.</p>
-            </div>
-          </div>
-
-          <div class="corporate-cta-box">
-            <h2>Get a corporate quote</h2>
-            <p>Share your brief with us and we'll get back with a detailed quote within 24 hours.</p>
-            <div class="cta-actions">
-              <button class="btn btn-whatsapp" onclick="openWhatsApp('Hi Memoria! I am interested in corporate gifting. Could you share your catalogue and pricing?')">
-                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp your brief
-              </button>
-              <button class="btn btn-ghost" onclick="navigateTo('contact')">
-                Send enquiry form
-              </button>
             </div>
           </div>
         </div>
